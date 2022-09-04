@@ -1,0 +1,47 @@
+.burger-constructor-list {
+  padding-right: 10px;
+  display: flex;
+  flex-direction: column;
+  height: 756px;
+  gap: 10px;
+}
+
+.main-items {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  overflow: auto;
+}
+
+.main-items::-webkit-scrollbar {
+  background-color: #2f2f37;
+  border-radius: 8px;
+  width: 8px;
+  overflow: hidden;
+}
+
+.main-items::-webkit-scrollbar-thumb {
+  background-color: #8585ad;
+  border-radius: 8px;
+}
+
+.main-item {
+  max-width: 568px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.main-item svg {
+  width: 24px;
+  height: 24px;
+}
+
+.first-item,
+.last-item {
+  max-width: 568px;
+  padding-left: 19px;
+  padding-right: 10px;
+  display: flex;
+  justify-content: flex-end;
+}

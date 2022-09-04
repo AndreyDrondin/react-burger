@@ -1,0 +1,9 @@
+.total-price {
+  margin-right: 40px;
+  display: flex;
+}
+
+.total-price svg {
+  width: 33px;
+  height: 33px;
+}
