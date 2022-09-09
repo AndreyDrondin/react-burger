@@ -4,33 +4,20 @@ import { box } from "@ya.praktikum/react-developer-burger-ui-components";
 import TabMain from "../Tab/Tab";
 import BurgerIngredientsList from "../BurgerIngredientsList/BurgerIngredientsList";
 import PropTypes from "prop-types";
+import types from "../../utils/types";
 
-function BurgerIngredients({ data }) {
+function BurgerIngredients({ data, getCurrentIngredient }) {
   return (
     <section className={styles["burger-ingredients"]}>
       <TabMain />
-      <BurgerIngredientsList data={data} />
+      <BurgerIngredientsList
+        data={data}
+        getCurrentIngredient={getCurrentIngredient}
+      />
     </section>
   );
 }
 
-BurgerIngredients.propTypes = {
-  data: PropTypes.arrayOf(
-    PropTypes.shape({
-      _id: PropTypes.string,
-      name: PropTypes.string,
-      type: PropTypes.string,
-      proteins: PropTypes.number,
-      fat: PropTypes.number,
-      carbohydrates: PropTypes.number,
-      calories: PropTypes.number,
-      price: PropTypes.number,
-      image: PropTypes.string,
-      image_mobile: PropTypes.string,
-      image_large: PropTypes.string,
-      __v: PropTypes.number,
-    })
-  ),
-};
+BurgerIngredients.propTypes = types;
 
 export default BurgerIngredients;

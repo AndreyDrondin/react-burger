@@ -6,19 +6,28 @@ import {
   Typography,
 } from "@ya.praktikum/react-developer-burger-ui-components";
 import styles from "./IngredientCart.module.css";
+import PropTypes from "prop-types";
+import types from "../../utils/types";
 
-function IngredientCart({ props }) {
+function IngredientCart({ ingredientData, getCurrentIngredient }) {
   return (
-    <div className={styles["ingredient-cart"]}>
+    <div
+      className={styles["ingredient-cart"]}
+      onClick={() => getCurrentIngredient(ingredientData)}
+    >
       <Counter count={1} size="default" />
-      <img src={props.image} alt="" />
+      <img src={ingredientData.image} alt="" />
       <div className={styles.price}>
-        <p className="text text_type_digits-default pr-2">{props.price}</p>
+        <p className="text text_type_digits-default pr-2">
+          {ingredientData.price}
+        </p>
         <CurrencyIcon type="primary" />
       </div>
-      <p className="text text_type_main-default">{props.name}</p>
+      <p className="text text_type_main-default">{ingredientData.name}</p>
     </div>
   );
 }
+
+IngredientCart.propTypes = types;
 
 export default IngredientCart;

@@ -1,6 +1,8 @@
 import React from "react";
 import styles from "./MenuItem.module.css";
 import { Typography } from "@ya.praktikum/react-developer-burger-ui-components";
+import PropTypes from "prop-types";
+import types from "../../utils/types";
 
 function MenuItem({ img, text }) {
   return (
@@ -12,5 +14,7 @@ function MenuItem({ img, text }) {
     </div>
   );
 }
+
+MenuItem.propTypes = types;
 
 export default MenuItem;
