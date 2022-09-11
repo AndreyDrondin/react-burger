@@ -15,6 +15,6 @@ function MenuItem({ img, text }) {
   );
 }
 
-MenuItem.propTypes = types;
+MenuItem.propTypes = { img: PropTypes.element, text: PropTypes.string };
 
 export default MenuItem;

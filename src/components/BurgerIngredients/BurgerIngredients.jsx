@@ -18,6 +18,9 @@ function BurgerIngredients({ data, getCurrentIngredient }) {
   );
 }
 
-BurgerIngredients.propTypes = types;
+BurgerIngredients.propTypes = {
+  ...types,
+  getCurrentIngredient: PropTypes.func,
+};
 
 export default BurgerIngredients;

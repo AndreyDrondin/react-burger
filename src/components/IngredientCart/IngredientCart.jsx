@@ -28,6 +28,6 @@ function IngredientCart({ ingredientData, getCurrentIngredient }) {
   );
 }
 
-IngredientCart.propTypes = types;
+IngredientCart.propTypes = { ...types, getCurrentIngredient: PropTypes.func };
 
 export default IngredientCart;

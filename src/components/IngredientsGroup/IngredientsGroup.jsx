@@ -25,6 +25,10 @@ function IngredientsGroup({ title, data, getCurrentIngredient }) {
   );
 }
 
-IngredientsGroup.propTypes = types;
+IngredientsGroup.propTypes = {
+  ...types,
+  title: PropTypes.string,
+  getCurrentIngredient: PropTypes.func,
+};
 
 export default IngredientsGroup;

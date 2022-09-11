@@ -1,15 +1,12 @@
 import React from "react";
 import AppHeader from "../AppHeader/AppHeader";
-import PropTypes from "prop-types";
-import types from "../../utils/types";
 import BurgerConstructor from "../BurgerConstructor/BurgerConstructor";
 import BurgerIngredients from "../BurgerIngredients/BurgerIngredients";
 import styles from "./App.module.css";
 import Modal from "../Modal/Modal";
 import OrderDetails from "../OrderDetails/OrderDetails";
 import IngredientDetails from "../IngredientDetails/IngredientDetails";
-
-const dataIngredients = "https://norma.nomoreparties.space/api/ingredients";
+import getIngredients from "../../utils/burger-api";
 
 function App() {
   const [isIngredientModalOpen, setIsIngredientModalOpen] =
@@ -19,12 +16,7 @@ function App() {
   const [currentIngredient, setCurrentIngredient] = React.useState(null);
 
   React.useEffect(() => {
-    const getProductData = async () => {
-      const res = await fetch(dataIngredients);
-      const data = await res.json();
-      setIngredients(data.data);
-    };
-    getProductData();
+    getIngredients().then((data) => setIngredients(data.data));
   }, []);
 
   function handleOpenIngredientModal() {
@@ -79,8 +71,5 @@ function App() {
     </>
   );
 }
-
-BurgerIngredients.propTypes = types;
-BurgerConstructor.propTypes = types;
 
 export default App;

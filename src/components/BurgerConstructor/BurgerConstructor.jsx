@@ -22,6 +22,6 @@ function BurgerConstructor({ data, setOrder }) {
   );
 }
 
-BurgerConstructor.propTypes = types;
+BurgerConstructor.propTypes = { ...types, setOrder: PropTypes.func };
 
 export default BurgerConstructor;

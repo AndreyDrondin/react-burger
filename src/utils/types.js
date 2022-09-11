@@ -1,6 +1,6 @@
 import PropTypes from "prop-types";
 
-let types = {
+const types = {
   data: PropTypes.arrayOf(
     PropTypes.shape({
       _id: PropTypes.string,

@@ -8,6 +8,20 @@ import PropTypes from "prop-types";
 const modalsElement = document.getElementById("react-modals");
 
 function Modal({ close, children, isOpen }) {
+  function pressEsc(e) {
+    if (e.key === "Escape") {
+      close();
+    }
+  }
+
+  React.useEffect(() => {
+    document.addEventListener("keydown", pressEsc);
+
+    return () => {
+      document.removeEventListener("keydown", pressEsc);
+    };
+  }, []);
+
   return (
     isOpen &&
     ReactDOM.createPortal(
