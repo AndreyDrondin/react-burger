@@ -1,0 +1,23 @@
+.header {
+  background-color: #1c1c21;
+}
+
+.container {
+  margin: 0 auto;
+  max-width: 1200px;
+  height: 88px;
+  display: flex;
+  align-items: center;
+}
+
+.container div:nth-child(2) {
+  margin-left: 50px;
+}
+
+.container div:nth-child(3) {
+  margin-left: 132px;
+}
+
+.container div:nth-child(4) {
+  margin-left: auto;
+}
